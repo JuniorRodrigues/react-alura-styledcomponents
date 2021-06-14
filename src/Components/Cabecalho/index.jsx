@@ -1,37 +1,36 @@
 import React from "react";
 
 import styled from 'styled-components';
-import { corPrimaria } from '../UI/variaveis';
 import bank_logo from "../../assets/images/bank_logo.svg";
-
-const StyledHeader = styled.nav`
-    background-color: ${corPrimaria};
-    display: flex;
-    justify-content: space-between;
-    padding: 0 15vw;
-    height: 10vh;
-    align-items: center;
-`;
-
-const StyledLogo = styled.img`
-    height: 25px;
-    width: 25px;
-`;
+import { corPrimaria } from "../UI/variaveis";
 
 const Cabecalho = () => {
     return (
-        <StyledHeader>
-            <StyledLogo src={bank_logo} alt="Logo Smart Bank" />
+        <div className="cabecalho">
+            <Logo src={bank_logo} alt="Logo Smart Bank" />
             <div>
-                <a className="btn-secundario" href="https://google.com">
-                    Ajuda
-                </a>
-                <a className="btn-primario" href="https://google.com">
-                    Sair
-                </a>
+                <Btn href="https://google.com">Ajuda</Btn>
+                <Btn primary href="https://google.com">Sair</Btn>
             </div>
-        </StyledHeader>
+        </div>
     );
 };
+
+const Logo = styled.img`
+    height: 50px;
+    width: 50px;
+`;
+
+const Btn = styled.a`
+    text-align: center;
+    border-radius: 3px;
+    padding: 5px 20px;
+    margin: 0 10px;
+    font-weight: 600;
+    border: 2px solid white;
+
+    color: ${(props) => props.primary ? 'white' : corPrimaria };
+    background: ${(props) => props.primary ? corPrimaria : 'white' };
+`;
 
 export default Cabecalho;

@@ -16,8 +16,8 @@ const Cabecalho = () => {
     );
 };
 
-const StyledCabecalho = styled.div`
-    background-color: #41d3be;
+const StyledCabecalho = styled.header`
+    background-color: ${ corPrimaria };
     display: flex;
     justify-content: space-between;
     padding: 0 15vw;

@@ -6,15 +6,24 @@ import { corPrimaria } from "../UI/variaveis";
 
 const Cabecalho = () => {
     return (
-        <div className="cabecalho">
+        <StyledCabecalho>
             <Logo src={bank_logo} alt="Logo Smart Bank" />
             <div>
                 <Btn href="https://google.com">Ajuda</Btn>
                 <Btn primary href="https://google.com">Sair</Btn>
             </div>
-        </div>
+        </StyledCabecalho>
     );
 };
+
+const StyledCabecalho = styled.div`
+    background-color: #41d3be;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15vw;
+    height: 10vh;
+    align-items: center;
+`;
 
 const Logo = styled.img`
     height: 50px;

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Titulo from "../Titulo";
 import Conta from "../Conta";
+import Extrato from "../Extrato";
 
 const Container = () => {
     return (
@@ -10,6 +11,7 @@ const Container = () => {
             <Titulo>Olá Fulano!</Titulo>
             <Conteudo>
                 <Conta />
+                <Extrato />
             </Conteudo>
         </StyledContainer>
     );
@@ -25,6 +27,10 @@ const Conteudo = styled.section`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+    }
 `;
 
 export default Container;
